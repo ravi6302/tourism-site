@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+        <script>
+            function VerifyCard(){
+                var card=document.getElementById("visa");
+                var Details=document.getElementById("txtCard").value;
+                if(Details.startsWith("4591")){
+                    card.src="visa.jpg";
+                }
+                else {
+                        card.src="master.jpg";
+                    }
+                    
+                }
+                function VerifyEmail(){
+                        var Email=document.getElementById("txtEmail").value;
+                        var msg=document.getElementById("lblEmail");
+                        if(Email.endsWith("@gmail.com")){
+                            msg.innerHTML="";
+                        }
+                        else{
+                            alert(msg.innerHTML="Email Must Ends with '@gmail.com'");
+                        }
+                }
+        </script>
+        <style>
+            body{
+                background-color:rgb(174, 163, 163);
+            }
+            dl dt{
+                color:black;
+            }
+           
+        </style>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend style="color:red;">Payment Details</legend>
+            <dl>
+                <dt>Card Details</dt>
+                <dd class="input-group">
+                    <input type="text" id="txtCard" onkeyup="VerifyCard()" class="form-control">
+                    <img id="visa" width="80" height="40">
+                </dd>
+                <dt>Your Email</dt>
+                <dd class="input-group">
+                    <input type="text" id="txtEmail" onblur="VerifyEmail()" class="form-control">
+                </dd><br>
+                <dd id="lblEmail"></dd>
+            </dl>
+        </fieldset>
+        <a href="index.html"><button class="btn btn-primary"><span class="bi bi-arrow-90deg-left"></span>Go Back</button></a>
+        <script src="../../node_modules/jquery/dist/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
